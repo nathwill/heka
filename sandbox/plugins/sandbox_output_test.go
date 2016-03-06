@@ -123,4 +123,8 @@ func OutputSpec(c gs.Context) {
 			c.Expect(err, gs.Not(gs.IsNil))
 		})
 	})
+
+	c.Specify("Redis output", func() {
+
+	})
 }

@@ -146,4 +146,8 @@ func InputSpec(c gs.Context) {
 			c.Expect(input.processMessageBytes, gs.Equals, int64(0))
 		})
 	})
+
+	c.Specify("Redis input", func() {
+
+	})
 }
