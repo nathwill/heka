@@ -209,9 +209,11 @@ function process_message()
 
     -- flatten and assign remaining fields to heka fields
     local flat = {}
-    if not pcall(function()
-      util.table_to_fields(json, flat, nil, separator, max_depth)
-    end) then return -1, "Failed to flatten message." end
+    local fok = pcall(function()
+        util.table_to_fields(json, flat, nil, separator, max_depth)
+    end)
+
+    if not fok then return -1, "Failed to flatten message." end
 
     msg.Fields = flat
 
